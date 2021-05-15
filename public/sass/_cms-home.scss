@@ -1,0 +1,187 @@
+// Container style global
+.cms__container{
+    @include Tiny-shadow;
+    background-color: $White;
+    @include border-radius-4;
+    margin-top: -100px;
+    position: relative;
+    &__header{
+        border-radius: 4px 4px 0 0;
+        padding: 22px 30px;
+        background-color: $Gray-100;
+    }
+    &__content{
+        border-radius: 0 0 4px 4px;
+        background-color: $White;
+        padding: 50px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 550px;
+    }
+    &__footer{
+        border-radius: 0 0 4px 4px;
+        background-color: $White;
+        padding: 30px;
+        border-top: solid 1px $Gray-200;
+        margin-top: -1px;
+    }
+}
+
+// Tabs style
+.cms__container{
+    &__header{
+        .cms__container__header__tabs{
+            display: flex;
+            align-items: center;
+            // Default Tab
+            a{
+                border: soldi 1px red;
+                color: $Gray-500;
+                margin-right: 40px;
+                @include ease-in;
+                &:hover{
+                    @include ease-out;
+                    color: $Green-600;
+                }
+            }
+            // Active Tab
+            .tab__active{
+                position: relative;
+                color: $Green-600;
+                &:before{
+                    content: ' ';
+                    width: 100%;
+                    border-bottom: solid 5px $Green-600;
+                    position: absolute;
+                    bottom: -23px;
+                }
+            }
+        }
+    }
+}
+
+// Products container style
+.cms__container__content{
+    > p{
+        margin-bottom: 20px;
+    }
+    .cms__grid__items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        margin-bottom: 25px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        .item__of__grid{
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            border: solid 2px $Green-200;
+            background-color: $Green-50;
+            @include border-radius-4;
+            padding: 8px 25px;
+            @include ease-in;
+            margin-top: 20px;
+            height: 65px;
+            .item__infos{
+                .body-large{
+                    color: $Green-600;
+                }
+                .body-medium{
+                    color: $Green-500;
+                }
+            }
+            &:hover{
+                background-color: $Green-100;
+                @include ease-out;
+            }
+        }
+    }
+}
+
+// Blog container style
+.cms__blog__grid{
+    .cms__grid__items{
+        display: flex;
+        margin-bottom: 25px;
+        align-items: center;
+        flex-direction: column;
+        .item__of__grid{
+            width: 100%;
+        }
+        .item__infos__title{
+            max-width: 70%;
+            min-width: 70%;
+            p{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; 
+            }
+        }
+        .item__infos__author{
+            max-width: 15%; 
+        }
+        .item__infos__date{
+            max-width: 15%; 
+        }
+    }
+}
+
+.cms__grid__items{
+    .dropdown{
+        margin-right: -12px;
+    }
+}
+
+
+.simple-footer{
+    margin: 40px auto;
+    text-align: center;
+
+}
+
+.cms__grid__items{
+    .add_new{
+        margin-top: 20px;
+    }
+}
+
+
+// Footer style
+.cms__container{
+    &__footer{
+        .button{
+            margin-right: 25px;
+        }
+        .footer__delete,
+        .footer__delete__disabled{
+            @include body-large;
+            color: $Red-500;
+            display: flex;
+            align-items: center;
+            @include ease-in;
+            cursor: pointer;
+            
+        }
+        .footer__delete{
+            &::before{
+                content: url(../images/delete-icon.svg);
+                margin-right: 5px;
+            }
+            &:hover{
+                transform: scale(0.97);
+                @include ease-out;
+            }
+        }
+        .footer__delete__disabled{
+            color: $Gray-300;
+            pointer-events: none;
+            &::before{
+                content: url(../images/delete-icon-disabled.svg);
+                margin-right: 5px;
+            }
+        }
+    }
+}

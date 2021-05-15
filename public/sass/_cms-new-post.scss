@@ -1,0 +1,53 @@
+.cms__container__content{
+    .split__container{
+        .thin_divider{
+            margin: 30px 0;
+        }
+    }
+}
+
+.blog__toolbar{
+    &__container{
+        background-color: $Gray-50;
+        @include border-radius-4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        border: solid 1px $Gray-300;
+        .blog__toolbar__button{
+            background-color: $Gray-50;
+            color: $Gray-700;
+            @include ease-in;
+            border-right: solid 1px $Gray-300;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            height: 100%;
+            @include body-large;
+            cursor: pointer;
+            &:last-child{
+                border-right: 0;
+                border-radius: 0 4px 4px 0;
+            }
+            &:first-child{
+                border-radius: 4px 0 0 4px;
+            }
+            img{
+                margin-right: 5px;
+            }
+            &:hover{
+                @include ease-out;
+                background-color: $Gray-100;
+            }
+        }
+        .toolbar__button__active{
+            background-color: $Gray-200;
+            &:hover{
+                background-color: $Gray-200;
+            }
+        }
+    }
+}

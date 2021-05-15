@@ -1,0 +1,199 @@
+// @import "tokens";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    list-style: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    text-rendering: optimizeLegibility;
+    border-image-source: none;
+    border-image-slice: none;
+    border-image-width: none;
+    border-image-outset: none;
+    border-image-repeat: none;
+    -webkit-user-select: text;
+    // cursor: auto;
+    border-width: 0;
+    border-style: normal;
+    border-color: initial;
+    -webkit-font-smoothing: antialiased; //Iguala o peso das fonts entre Mac e PC para Chrome
+    -moz-osx-font-smoothing: grayscale; //Iguala o peso das fonts entre Mac e PC para Firefox
+
+}
+
+input[type="file"]{
+    display: none;
+}
+
+
+select,
+button,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[type="file"] {
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+    -ms-appearance: none!important;
+    appearance: none!important;
+}
+
+/* Remove background amarelo dos inputs no Chrome */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+}
+
+/* Remove borda pontilhada no select em firefox */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+input::-webkit-input-placeholder,
+input::placeholder{
+    color: $Gray-200;
+    font-size: 1.125rem;
+}
+
+textarea::-webkit-input-placeholder {
+    color: $Gray-200;
+}
+
+textarea:-moz-placeholder {
+    color: $Gray-200;
+}
+
+textarea::-moz-placeholder {
+    color: $Gray-200;
+}
+
+textarea:-ms-input-placeholder {
+    color: $Gray-200;
+}
+
+img {
+    vertical-align: middle;
+    border: none;
+}
+
+a{
+    cursor: pointer;
+}
+
+button {
+    background: transparent;
+}
+
+body{
+    font-family: proxima-nova,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 135%;
+    font-size: 1.125rem;
+    color: $Gray-600;
+}
+
+p{
+    font-family: proxima-nova,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 135%;
+    font-size: 1.125rem;
+    color: $Gray-600;
+}
+
+.main-wrapper{
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.post-wrapper{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.contact-wrapper{
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.gray-background{
+    background-color: $Gray-50;
+    width: 100%;
+}
+
+.green-background{
+    background-color: $Green-800;
+    width: 100%;
+}
+
+.gray-background-fixed{
+    background-color: $Gray-50;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.split__container{
+    width: 100%;
+    max-width: 50%;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .main-wrapper,
+    .post-wrapper,
+    .contact-wrapper{
+        margin-left: 20px!important;
+        margin-right: 20px!important;
+    }
+    .header-wrapper,
+    .cta__wrapper{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .header-wrapper{
+        h1{
+            text-align: center;
+        }
+    }
+}

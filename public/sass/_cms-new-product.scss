@@ -1,0 +1,33 @@
+.toggle__container{
+    display: flex;
+    flex-wrap: wrap;
+    .toggle__holder{
+        @include border-radius-4;
+        background-color: $Gray-50;
+        width: 100%;
+        max-width: 49%;
+        margin-right: 2%;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:nth-child(even){
+            margin-right: 0;
+        }
+    }
+    .toggle__holder__active{
+        color: $Gray-700;
+    }
+}
+
+
+.cms__container__content{
+    .split__container{
+        .title-small{
+            &:not(:first-child){
+                margin-top: 50px;
+            }
+        }
+    }
+}

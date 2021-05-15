@@ -1,0 +1,488 @@
+// @import "components";
+// @import "tokens";
+// @import "reset";
+
+// ====================================================
+//  Header
+// ====================================================
+
+.hero{
+    background-image: url(../images/jesus-kiteque-wn-KYaHwcis-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    .hero__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 85px);
+        h1{
+            color: $Green-700;
+            margin-bottom: 30px;
+        }
+    }
+    .docked-bar{
+        width: 100%;
+        color: $White;
+        .talk-to-us{
+            background-color: $Green-700;
+            padding: 0 40px;
+            flex-basis: 35%;
+            flex-wrap: nowrap;
+            text-align: right;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                color: $White;
+                margin-left: 10px;
+            }
+            img{
+                max-width: 20px;
+            }
+        }
+        .hero__information{
+            background-color: $Green-800;
+            flex-basis: 65%;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+            p{
+                color: $White;
+                text-align: left;
+            }
+        }
+    }
+}
+
+// ====================================================
+//  Category
+// ====================================================
+
+.category{
+    padding: 120px 0;
+        h1{
+        text-align: center;
+        color: $Green-700;
+        padding: 100px 0;
+    }
+}
+
+// Common rulers
+.cultivation__category,
+.animal__category{
+    display: flex;
+    flex-basis: 50%;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    .infos__category{
+        background-color: $White;
+        @include Tiny-shadow;
+        @include border-radius-4;
+        padding: 30px;
+        h2{
+            color: $Green-700;
+        }
+        hr{
+            margin: 15px 0;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        a{
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+}
+
+// Exeptions
+.cultivation__category{
+    .home-pattern{
+        position: absolute;
+        left: 240;
+        bottom: 13;
+        z-index: 0;
+    }
+    .infos__category{
+        position: absolute;
+        max-width: 335px;
+        left: 120;
+        z-index: 1;
+    }
+    img{
+        z-index: 1;
+    }
+}
+
+.animal__category{
+    flex-direction: row-reverse;
+    .home-pattern{
+        position: absolute;
+        right: 240;
+        top: 13;
+        z-index: 0;
+    }
+    .infos__category{
+        position: absolute;
+        max-width: 335px;
+        right: 120;
+        z-index: 1;
+    }
+    img{
+        z-index: 1;
+    }
+}
+
+
+// ====================================================
+//  Blog Home
+// ====================================================
+
+.blog{
+    background-color: $Green-700;
+    border-top: solid 8px $Green-800;
+    padding: 100px 0;
+    position: relative;
+    .blog__container{
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        .blog__introduction{
+            flex-direction: column;
+            height: 370px;
+            z-index: 10;
+            flex-basis: 25%;
+            h2{
+                color: $White;
+            }
+            p{
+                color: $Gray-400;
+                padding: 20px 0 50px 0;
+            }
+            a{
+                color: $Accent-Green;
+                &::after{
+                    content: url(../images/Arrow-Icon.svg);
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+.blog{
+    .pattern{
+        background-image: url(../images/pattern.svg);
+        height: 160px;
+        opacity: 0.10;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-position: center;
+    }
+}
+
+
+// ====================================================
+//  Testimonials
+// ====================================================
+.testimonials{
+    background-image: url(../images/Dotted-map.svg);
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h2{
+        color: $Accent-Green;
+        margin-bottom: 50px;
+    }
+    .flex-container{
+        justify-content: flex-start;
+    }
+    .quote{
+    width: 100%;
+    max-width: 390px;
+    margin-left: 60px;
+        blockquote{
+            color: $Gray-600;
+            padding: 15px 0 20px 0;
+            position: relative;
+            &::before{
+                content: url(../images/quote-mark.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                left: -50;
+                top: 20;
+            }
+        }
+        footer{
+            h4{
+                color: $Green-700;
+            }
+            p{
+                color: $Green-600;
+            }
+        }
+    }
+    .quote{
+        &:last-child{
+            margin-left: 100px;
+        }
+    }
+}
+
+
+// ====================================================
+//  Call to action
+// ====================================================
+.cta__home{
+    background-color: $Green-700;
+    padding: 120px 0 220px 0;
+    border-top: solid 4px $Accent-Green;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .cta__wrapper{
+        width: 100%;
+        max-width: 650px;
+        text-align: center;
+        h2{
+            color: $White;
+        }
+        p{
+            padding: 15px 0 30px 0;
+            color: $White;
+        }
+    }
+}
+
+.cta__home{
+    .pattern{
+        background-image: url(../images/pattern.svg);
+        height: 100px;
+        opacity: 0.10;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-position: bottom;
+    }
+}
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+    .hero{
+        .docked-bar{
+            .talk-to-us{
+                flex-basis: 40%;
+                padding: 0 20px;
+            }
+            .hero__information{
+                flex-basis: 60%;
+                padding: 0 20px;
+            }
+        }
+    }
+
+    // Category =======================================
+
+    .cultivation__category,
+    .animal__category{
+       .infos__category{
+           padding: 25px 20px;
+       }
+    }
+    .cultivation__category{
+        .home-pattern{
+            left: 200;
+            bottom: 30;
+        }
+        .infos__category{
+            left: 60;
+            margin-right: 10px;
+        }
+    }
+    .animal__category{
+        .home-pattern{
+            right: 200;
+            top: 30;
+        }
+        .infos__category{
+            right: 60;
+            margin-left: 20px;
+        }
+    }
+
+    // Category =======================================
+    .blog{
+        .blog__container{
+            grid-column-gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            .card__post{
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+    }
+    // testimonials =======================================
+    .testimonials{
+        background-image: none;
+        .title-large{
+            text-align: center;
+        }
+    }
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .hero{
+        .hero__content{
+            h1{
+                font-size: 3rem;
+            }
+        }
+        .docked-bar{
+            .talk-to-us{
+                flex-basis: 100%;
+                justify-content: center;
+            }
+            .hero__information{
+                display: none!important;
+            }
+        }
+    }
+    // Category =======================================
+    .category{
+        .flex-container{
+            flex-direction: column;
+            align-items: normal;
+            .cultivation__category,
+            .animal__category{
+                justify-content: center;
+                img{
+                    width: 100%;
+                }
+               .infos__category{
+                    padding: 25px;
+                    left:0;
+                    right:0;
+                    margin-left:auto;
+                    margin-right:auto;
+                    bottom: 50;
+               }
+            }
+            .animal__category{
+                margin-top: 80px;
+            }
+            .cultivation__category{
+                .home-pattern{
+                    display: none;
+                }
+            }
+            .animal__category{
+                .home-pattern{
+                    display: none;
+                }
+            }
+        }
+    }
+    // Blog =======================================
+    .blog{
+        .blog__container{
+            grid-column-gap: 10px;
+            grid-template-columns: 1fr;
+            .card__post{
+                margin-top: 25px;
+                &:last-child{
+                    display: flex;
+                }
+            }
+            .blog__introduction{
+                text-align: center;
+                flex-basis: 90%;
+                height: auto;
+                p{
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+
+    .testimonials{
+        background-image: none;
+        .flex-container{
+            flex-direction: column!important;
+            .quote{
+                width: auto;
+                margin-top: 30px;
+                &:last-child{
+                    margin-left: 60px;
+                }
+            }
+        }
+        .title-large{
+            text-align: center;
+        }
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+    .hero{
+        .hero__content{
+            h1{
+                font-size: 2.5rem;
+            }
+        }
+        .docked-bar{
+            .talk-to-us{
+                height: 60px;
+            }
+        }
+    }
+    .category{
+        .flex-container{
+            .cultivation__category,
+            .animal__category{
+                justify-content: center;
+               .infos__category{
+                    bottom: 0;
+               }
+            }
+            .animal__category{
+                margin-top: 120px;
+            }
+        }
+    }
+    .blog{
+        .flex-container{
+            .blog__introduction{
+                flex-basis: 100%;
+            }
+            .card__post{
+                max-width: 100%;
+            }
+        }
+    }
+}

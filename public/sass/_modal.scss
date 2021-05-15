@@ -1,0 +1,129 @@
+
+.modal{
+    z-index: 200;
+    width: 100%;
+    position: fixed;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top: 80;
+    background-color: $White;
+    @include border-radius-4;
+    opacity: 0;
+    visibility: hidden;
+    &__header{
+        padding: 25px;
+        border-radius: 4px 4px 0 0;
+        background-color: $Gray-50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+            margin-left: 10px;
+        }
+    }
+    &__content{
+        padding: 30px;
+        background-color: $White;
+    }
+    &__footer{
+        padding: 30px;
+        border-top: solid 1px $Gray-200;
+    }
+}
+
+.modal__small{
+    width: 100%;
+    max-width: 420px;
+    .modal__content{
+        @include border-radius-4;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 30px 25px;
+        .button{
+            margin-right: 0;
+        }
+        p{
+            margin: 25px;
+        }
+    }
+ }
+ 
+.modal__medium{
+   max-width: 560px;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    // Scale esta distorcendo a renderização da font do modal
+    // transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: $Overlay;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+}
+
+.modal{
+    .input__group{
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+    .button{
+        margin-right: 30px;
+    }
+}
+
+.modal__drop__area{
+    background-color: $Green-50;
+    border: dashed 2px $Green-200;
+    height: 250px;
+    @include border-radius-4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    @include body-large;
+    color: $Green-600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 100px;
+    cursor: pointer;
+    @include ease-in;
+    &:before{
+        position: absolute;
+        left: auto;
+        right: auto;
+        top: 50;
+        @include ease-in;
+        content: url(../images/drop-area-modal-icon.svg);
+    }
+    &:hover{
+        background-color: $Green-100;
+        @include ease-out;
+        border: dashed 2px $Green-300;
+        &:before{
+            top: 45;
+            @include ease-out;
+        }
+    }
+    span:not(:first-child){
+        @include body-medium;
+        color: $Green-500;
+        padding-top: 20px;
+    }
+}

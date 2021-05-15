@@ -1,0 +1,249 @@
+
+
+// ====================================================
+// Colors & Shadows
+// ====================================================
+
+// Brand color scale
+$Green-800: hsl(145, 40, 25);
+$Green-700: hsl(145, 45, 30);
+$Green-600: hsl(145, 40, 40);
+$Green-500: hsl(145, 40, 50);
+$Green-400: hsl(145, 50, 60);
+$Green-300: hsl(145, 50, 70);
+$Green-200: hsl(145, 60, 80);
+$Green-100: hsl(145, 60, 90);
+$Green-50:  hsl(145, 60, 95);
+
+// Backgrounds, Texts & border
+$Gray-900: hsl(210, 20, 20);
+$Gray-800: hsl(210, 15, 25);
+$Gray-700: hsl(210, 15, 35);
+$Gray-600: hsl(210, 12, 45);
+$Gray-500: hsl(210, 15, 60);
+$Gray-400: hsl(210, 20, 75);
+$Gray-300: hsl(210, 20, 80);
+$Gray-200: hsl(210, 20, 85);
+$Gray-100: hsl(210, 22, 95);
+$Gray-50:  hsl(210, 25, 97);
+
+// System colors
+$Black:       hsl(0, 0, 0);
+$White:       hsl(0, 0, 100);
+$Overlay:     hsla(220, 40, 10, .9);
+$Blue-500:    hsl(210, 100, 50);
+$Blue-400:    hsl(210, 95, 65);
+$Red-500:     hsl(5, 90, 58);
+$Red-50:      hsl(350, 100, 95);
+$Yellow-800:  hsl(35, 95, 55);
+$Yellow-100:  hsl(55, 100, 88);
+$Accent-Green:hsl(75, 60, 50);
+
+@mixin Tiny-shadow {
+  box-shadow:
+    0px 0px 2px hsla(0, 0, 0, 0.15%),
+    0px 1px 4px hsla(0, 0, 0, 0.10%);
+}
+
+@mixin Container-Shadow {
+  box-shadow: 
+    0px 0px 2px hsla(0, 0, 0, 0.15%),
+    0px 3px 4px hsla(0, 0, 0, 0.10%);
+}
+
+// ====================================================
+// Typography
+// ====================================================
+
+// Bold
+// font-weight: 700;
+
+// Semibold
+// font-weight: 600;
+
+// Medium
+// font-weight: 500;
+
+// Regular
+// font-weight: 400;
+
+// Display large (58)
+.display-large{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 3.625rem;
+  color: $Gray-700;
+}
+
+// Display medium (38)
+.display-medium{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 2.375rem;
+  color: $Gray-700;
+}
+
+// Title large (26)
+.title-large{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 1.625rem;
+  color: $Gray-700;
+}
+
+// Title medium (22)
+.title-medium{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 1.375rem;
+  color: $Gray-700;
+}
+
+// Title small (18)
+.title-small{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 1.125rem;
+  color: $Gray-700;
+}
+
+// Title extra small (16)
+.title-extra-small{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 1rem;
+  color: $Gray-700;
+}
+
+// Body large (18)
+.body-large{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 135%;
+  font-size: 1.125rem;
+  color: $Gray-700;
+}
+
+.body-large-post{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 170%;
+  font-size: 1.125rem;
+  color: $Gray-700;
+}
+
+
+@mixin body-large{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 135%;
+  font-size: 1.125rem;
+  color: $Gray-700;
+}
+
+// Body medium (16)
+.body-medium{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  font-size: 1rem;
+  color: $Gray-700;
+}
+
+@mixin body-medium{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  font-size: 1rem;
+  color: $Gray-700;
+}
+
+// Button (18)
+.button{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 130%;
+  font-size: 1.125rem;
+}
+
+@mixin button{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 130%;
+  font-size: 1.125rem;
+}
+
+// Caption (12)
+.caption{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  font-size: 0.625rem;
+  color: $Gray-700; 
+  text-transform: uppercase;
+}
+
+//label (12)
+label,
+.label{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  font-size: 1rem;
+  color: $Gray-500;
+  display: block;
+  text-align: left;
+}
+
+
+// ====================================================
+// Transitions
+// ====================================================
+
+// fast at the beginning, slow at the end
+// Use when things are moving in
+@mixin ease-out{
+  -webkit-transition: ease-out 150ms;
+  -moz-transition: ease-out 150ms;
+  -o-transition: ease-out 150ms;
+  transition: ease-out 150ms;
+} 
+
+// Slow at the beginning, fastt at the end
+// Use when things are moving out
+@mixin ease-in{
+  -webkit-transition: ease-in 150ms;
+  -moz-transition: ease-in 150ms;
+  -o-transition: ease-in 150ms;
+  transition: ease-in 150ms;
+} 
+
+
+// ====================================================
+// Radius
+// ====================================================
+
+@mixin border-radius-4{
+  border-radius: 4px;
+}

@@ -1,0 +1,423 @@
+// @import "tokens";
+// @import "reset";
+
+
+
+// ====================================================
+// Buttons
+// Don't forget to apply role="button" in case of link
+// ====================================================
+
+//Global
+.button{
+    appearance: none;
+    @include border-radius-4;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    @include button;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: $Gray-200;
+    @include ease-in;
+}
+
+.button_large{
+    height: 65px;
+}
+
+// Primary
+.button_primary{
+    color: $White;
+    background-color: $Green-700;
+    &:hover{
+        @include ease-out;
+        background-color: $Green-800;
+    }
+}
+
+//Secondary
+.button_secondary{
+    color: $Gray-600;
+    background-color: $Gray-50;
+    border: solid 2px $Gray-400;
+    &:hover{
+        @include ease-out;
+        background-color: $Gray-100;
+    }
+}
+
+//Accent
+.button_accent{
+    color: $Green-800;
+    background-color: $Accent-Green;
+    &:hover{
+        @include ease-out;
+        background-color: darken($Accent-Green,5%);
+    }
+}
+
+.button_danger{
+    color: $White;
+    background-color: $Red-500;
+    &:hover{
+        @include ease-out;
+        background-color: darken($Red-500,15%);
+    }
+}
+
+// Subtle
+.button_sublte{
+    color: $Green-600;
+    background-color: $White;
+    &:hover{
+        @include ease-out;
+        background-color: $Gray-50;
+    }
+}
+
+//Disabled
+//Remember to apply inside the element
+//disabled
+//aria-disabled="true"
+//role="button" (In case of link)
+.button_disabled{
+    background-color: $Gray-50;
+    color: $Gray-300;
+    pointer-events: none;
+    &:hover{
+        background-color: $Gray-50;
+        color: $Gray-300;
+    }
+}
+
+
+.toggle{
+    height: 24px;
+    width: 40px;
+    background-color: $White;
+    border-radius: 24px;
+    border: solid 2px $Gray-200;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    &::before{
+        content: " ";
+        padding: 8px;
+        display: inline-block;
+        background-color: $Gray-200;
+        border-radius: 100%;
+        position: absolute;
+        left: 3;
+        cursor: pointer;
+    }
+}
+
+.toggle--active{
+    background-color: $Green-500;
+    border: solid 2px $Green-600;
+    &::before{
+        right: 3;
+        left: auto;
+        background-color: $White;
+    }
+}
+
+
+.dropdown{
+    position: relative;
+    padding: 12px;
+    @include border-radius-4;
+    @include ease-in;
+    cursor: pointer;
+    .dropdown__content{
+        @include border-radius-4;
+        @include Container-Shadow;
+        position: absolute;
+        background-color: $White;
+        @include ease-in;
+        right: 0;
+        top: 45;
+        opacity: 0;
+        visibility: hidden;
+        min-width: 220px;
+        max-width: 300px;
+        @include ease-in;
+        z-index: 100;
+        p{
+            @include body-large;
+            color: $Gray-500;
+            padding: 20px;
+            @include ease-out;
+            text-align: left;
+            img{
+                margin-right: 5px;
+            }
+            &:hover{
+                background-color: $Gray-50;
+                @include border-radius-4;
+            }
+            &:last-child{
+                color: $Red-500;
+            }
+        }
+    } 
+    &:hover{
+        background-color: $Green-200;
+        @include ease-out;
+        .dropdown__content{
+            visibility: visible;
+            opacity: 1;
+            @include ease-out;
+        }
+    } 
+}
+
+// ====================================================
+// Inputs and textarea
+// ====================================================
+
+select,
+textarea,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]{
+    @include body-large;
+    color: $Gray-700;
+    border: solid 2px $Gray-200;
+    width: 100%;
+    padding: 15px 0;
+    text-indent: 20px;
+    resize: none;
+    text-align: left;
+    // background-color: $White;
+    height: 50px;
+    @include border-radius-4;
+    @include ease-in;
+    margin-bottom: 20px;
+    &:hover{
+        border: solid 2px $Gray-300;
+        @include ease-out; 
+    }
+    &:focus{
+        border: solid 2px $Blue-500;
+        @include ease-out;  
+    }
+}
+
+textarea{
+    height: auto;
+    text-indent: 0;
+    padding: 15px;
+}
+
+
+.input_disabled,
+.input__group__disabled{
+    color: $Gray-200!important;
+    pointer-events: none!important;
+    background-color: $Gray-50!important;
+    border: solid 2px $Gray-100!important;
+    label{
+        color: $Gray-300!important;
+        pointer-events: none!important;
+    }
+}
+.label__disabled{
+    color: $Gray-300!important;
+    pointer-events: none!important;
+}
+
+// Input Group
+.input__group{
+    display: flex;
+    justify-content: space-between;
+    @include border-radius-4;
+    margin-bottom: 20px;
+    // Asjuta o input para o padrão de input group
+    input{
+        background-color: $Gray-50;
+        border: solid 2px $Gray-50;
+        text-indent: 5px;
+        margin-bottom: 0;
+        border-radius: 0;
+        &:focus{
+            border: solid 2px $Gray-50;
+        }
+        &:hover{
+            border: solid 2px $Gray-50;
+        }
+    }
+    // Asjuta a label para o padrão de input group
+    label{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include body-large;
+        padding-left: 5px;
+        background-color: $Gray-50;
+        color: $Gray-700;
+        cursor: pointer;
+    }
+    .input__group__icon__left,
+    .input__group__icon__right{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        position: relative;
+        background-color: $Gray-50; 
+    }
+    .input__group__icon__left{
+        border-radius: 4px 0 0 4px;
+        img{
+            opacity: 0.5;
+        }
+    }
+    .input__group__icon__right{
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+// Use to active the hovered delete button
+.input__container{
+    position: relative;
+    
+    .delete__item{
+        background-color: $Red-50;
+        border: solid 1px $Red-500;
+        border-radius: 50%;
+        padding: 20px;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        @include ease-in;
+        position: absolute;
+        cursor: pointer;
+        right: -45;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        &::after{
+            content: url(../images/delete-icon.svg);
+            
+        }
+    }
+    &:hover{
+        .delete__item{
+            opacity: 1;
+            visibility: visible;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+
+
+// Dashed
+.add_new{
+    border: dashed 2px $Gray-200;
+    background-color: $Gray-50;
+    color: $Gray-600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include ease-in;
+    width: 100%;
+    &:before{
+        content: url(../images/add-icon.svg);
+        margin-right: 8px;
+    }
+    &:hover{
+        @include ease-out;
+        background-color: $Gray-100;
+        border: dashed 2px $Gray-300;
+    }
+}
+
+.add_new_success{
+    border: none;
+    background-color: $Gray-100;
+    color: $Gray-600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include ease-in;
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+ 
+    &:hover{
+        @include ease-out;
+        background-color: $Gray-50;
+    }
+}
+
+
+
+// ====================================================
+// Divider
+// ====================================================
+
+.thick_divider{
+    max-width: 40px;
+    height: 4px;
+    appearance: none;
+    background: $Accent-Green;
+    border: none;
+}
+
+.thin_divider{
+    width: 100%;
+    margin: 50px 0;
+    height: 1px;
+    appearance: none;
+    border: none;
+    background-color: $Gray-200;
+}
+
+.thin_divider_overlap{
+    width: 100%;
+    margin: 50px 0;
+    height: 1px;
+    appearance: none;
+    border: none;
+    background-color: $Gray-200;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+}
+
+
+// ====================================================
+// Hint
+// ====================================================
+
+.hint{
+    @include body-medium;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    color: $Gray-400;
+    &:before{
+        content: url(../images/hint-info.svg);
+        margin-right: 5px;
+    }
+}

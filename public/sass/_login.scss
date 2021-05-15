@@ -1,0 +1,33 @@
+.form__login{
+    margin: auto;
+    @include Tiny-shadow;
+    @include border-radius-4;
+    width: 100%;
+    max-width: 390px;
+    .form__login__content{
+        padding: 30px;
+        background-color: $White;
+    }
+    .form__login__header{
+        padding: 30px;
+        background-color: $Gray-50;
+        justify-content: center;
+        h2{
+            margin-left: 10px;
+            color: $Gray-600;
+        }
+    }
+    a{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.login__center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}

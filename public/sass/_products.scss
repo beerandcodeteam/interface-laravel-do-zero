@@ -1,0 +1,112 @@
+.common-header{
+    height: 280px;
+    background-color: $Green-700;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 35px;
+    .header-wrapper{
+        position: relative;
+        width: 100%;
+        max-width: 1250px;
+        margin-left: auto;
+        margin-right: auto;
+        h1{
+            // position: absolute;
+            // bottom: 0;
+            color: $Accent-Green;
+        }
+    }
+}
+
+.common-header{
+    .pattern__header{
+        background-image: url(../images/pattern.svg);
+        height: 280px;
+        opacity: 0.10;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-position: top;
+    }
+}
+
+.products__cultivation__category,
+.products__animal__category{
+    display: grid;
+    padding: 60px 0;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.card__product{
+    @include Tiny-shadow;
+    @include border-radius-4;
+    background-color: $White;
+    @include ease-in;
+    display: flex;
+    height: 320px;
+    &:last-child{
+        margin-right: 0;
+    }
+    a{
+        width: 100%;
+        .card__cover{
+            max-height: 70%;
+            overflow: hidden;
+            img{
+                border-radius: 4px 4px 0 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &:hover{
+        opacity: 0.9;
+        @include ease-out;
+        transform:  translateY(-2px);
+        @include Container-Shadow;
+    }
+    .card__product-header{
+        padding: 25px;
+        max-height: 30%;
+        h2{
+            color: $Green-700;
+        }
+    }
+}
+
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+    .products__cultivation__category,
+    .products__animals__category{
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .products__cultivation__category,
+    .products__animals__category{
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+    .products__cultivation__category,
+    .products__animals__category{
+        grid-template-columns: repeat(1, 1fr)
+    }
+}

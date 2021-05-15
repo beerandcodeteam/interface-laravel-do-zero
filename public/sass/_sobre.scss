@@ -1,0 +1,146 @@
+
+.split-content{
+    display: flex;
+    position: relative;
+}
+
+.about__content{
+    padding: 250px 100px 100px 0;
+    max-width: 50%;
+}
+
+.about__img__values{
+    padding: 250px 0 100px 100px;
+    max-width: 50%;
+}
+
+
+.about__content{
+    background-color: $Green-700;
+    .about__history{
+        h1{
+            color: $Accent-Green;
+            margin-bottom: 50px;
+        }
+        p{
+            color: $White;
+            margin: 25px 0;
+        }
+    }
+    p{
+        margin-top: 150px;
+        color: $White;
+        margin-bottom: 20px;
+    }
+    .about__clients{
+        margin-bottom: 150px;
+        float: left;
+        .about__clients__logos{
+            background-color: $White;
+            border-left: solid 8px $Green-600;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            width: 100%;
+            img{
+              width: 180px;
+            }
+        }
+    }
+}
+
+.about__img__values{
+    img{
+        width: 100%;
+    }
+}
+
+.half-green-background{
+    position: fixed;
+    right: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $Green-700;
+}
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+    .about__content{
+        padding: 250px 50px 100px 0;
+        .about__clients{
+            .about__clients__logos{
+                img{
+                    margin: 20px 20px;
+                }
+            }
+        }
+    }
+    .about__img__values{
+        padding: 250px 0 100px 50px;
+    }
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .split-content{
+        flex-direction: column-reverse;
+        padding-top: 150px;
+        img{
+            max-width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .about__content,
+        .about__img__values{
+            max-width: 100%;
+            padding: 25px 0;
+            background-color: $Green-800;
+        }
+        .about__content{
+            .about__clients{
+                float: none;
+                .about__clients__logos{
+                    grid-column-gap: 10px;
+                    img{
+                        margin: 0;
+                        max-width: 100%;
+                    }
+                }
+            }
+            > p{
+                margin-top: 50px;
+            }
+        }
+    }
+    .half-green-background{
+        display: none;
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+    .split-content{
+        .about__content{
+            .about__clients{
+                .about__clients__logos{
+                    grid-template-columns: 1fr 1fr;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

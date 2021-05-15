@@ -1,0 +1,192 @@
+// @import "components";
+// @import "tokens";
+// @import "reset";
+
+// Global style
+nav{
+    height: 85px;
+    width: 100%;
+    background-color: $White;
+    @include Tiny-shadow;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 100;
+    .logotipo{
+        display: flex;
+        img{
+            display: block;
+            max-height: 40px;
+        }
+    }
+    .navigation__itens{
+        display: flex;
+        li{
+            a{
+                @include body-large;
+                margin-left: 40px;
+                color: $Green-600;
+                position: relative;
+                @include ease-in;
+                .border-effect{
+                    height: 4px;
+                    width: 40px;
+                    background-color: $Accent-Green;
+                    display: block;
+                    position: absolute;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    top: 10px;
+                    @include ease-in;
+                    opacity: 0;
+                }
+                &:hover{
+                    color: $Green-700;
+                    @include ease-out;
+                    .border-effect{
+                        top: 25px; 
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .navigation__itens__cms{
+        text-align: right;
+        p{
+            color: $Gray-600;
+            b{
+                font-weight: 600;
+            }
+        } 
+        a{
+            color: $Gray-400;
+            position: relative;
+            img{
+                opacity: 0;
+                @include ease-in;
+                transform: rotate(180deg);
+                position: absolute;
+                right: 0;
+                top: 4;
+                visibility: hidden;
+            }
+            &:hover{
+                img{
+                    visibility: visible;
+                    opacity: 1;
+                    @include ease-out;
+                    right: -20;
+                }
+            }
+        }    
+    }
+}
+
+//Hamburger menu
+#toggle {
+    z-index:10;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle .span {
+    height: 2px;
+    border-radius: 2px;
+    background: $Green-600;
+    margin: 5px auto;
+    transition: all 0.3s ease-out;
+    backface-visibility: hidden;
+}
+
+#toggle.on #one {
+    transform: 
+    rotate(45deg)
+    translateX(4px)
+    translateY(0px);
+}
+
+#toggle.on #two {
+    opacity: 0;
+}
+
+#toggle.on #three {
+    transform: 
+    rotate(-45deg)
+    translateX(10px)
+    translateY(-6px)
+}
+
+// Hamburger menu list
+#resize {
+    z-index: 20;
+    position: fixed;
+    top: 85px;
+    background: $Green-700;
+    color: $White;
+    width: 100%;
+    height: 100%;
+    @include ease-in;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    li{
+        padding: 20px;
+        a{
+          color: $White;
+        }
+    }
+}
+
+#resize.active {
+    visibility: visible;
+    opacity: 1;
+    @include ease-out;
+}
+
+
+// ====================================================
+//  Large Devices, Wide Screens
+// ====================================================
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+  
+    #toggle {
+        visibility: visible;
+        opacity: 1;
+    }
+    .navigation__itens{
+        display: none!important;
+    }
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+ 
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+
+}
+

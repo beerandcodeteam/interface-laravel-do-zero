@@ -1,0 +1,121 @@
+.contact__block{
+    padding: 180px 0 250px 0;
+    text-align: center;
+    h1{
+        color: $Green-600;
+        margin-bottom: 10px;
+    }
+    p{
+        color: $Gray-600;
+        text-align: center;
+        max-width: 65%;
+        margin: 0 auto;
+    }
+}
+
+.contact__options{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    .contact__form,
+    .contact__infos{
+        @include Tiny-shadow;
+        @include border-radius-4;
+        background-color: $Green-600;
+        padding: 30px;
+        width: 100%;
+    }
+    
+    .contact__form{
+        background-color: $White;
+        button{
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.contact__options{
+    .contact__infos{
+        text-align: left;
+        padding: 30px;
+        div{
+            margin-bottom: 45px;
+            .contact__infos__header{
+                display: flex;
+                align-content: center;
+                margin-bottom: 5px;
+                h3{
+                    color: $White;
+                    margin-left: 10px;
+                }
+                img{
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+        }
+        a{
+            color: $Gray-300;
+        }
+        .contact__infos__social-media{
+            a{
+                color: $White;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .contact__block{
+        padding: 120px 0 100px 0;
+        p{
+            width: 100%;
+            max-width: 90%;
+        }
+        .contact__options{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column-gap: 20px;
+            .contact__form{
+                margin-bottom: 25px;
+            }
+            .contact__form,
+            .contact__infos{
+                padding: 20px;
+            }
+            .contact__infos{
+                text-align: center;
+                padding: 35px 20px;
+                .contact__infos__header{
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+
+}

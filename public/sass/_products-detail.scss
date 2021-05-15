@@ -1,0 +1,183 @@
+.products__general{
+    display: flex;
+    margin-top: -115px;
+    justify-content: space-between;
+    position: relative;
+}
+
+// Aside with product card and link
+.products__general{
+    .product__selected{
+        .card__product{
+            max-width: 100%;
+            margin-right: 0;
+        }
+        .back-to-products{
+            color: $Gray-600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            &::before{
+                content: url(../images/Arrow-left.svg);
+                padding: 10px;
+            }
+        }
+    }
+}
+
+
+// Products list header, ovelap
+.products__general{
+    .products__list{
+        max-width: 70%;
+        margin-left: 20px;
+        margin-bottom: 50px;
+        > header{
+            margin-bottom: 70px;
+            h2{
+                color: $Accent-Green;
+            }
+            p{
+                color: $White;
+                padding-top: 15px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// Header and clickable area for collapse product
+.product{
+    @include Tiny-shadow;
+    @include border-radius-4;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: $White;
+    .clickable-area{
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .product__header{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            h3{
+                color: $Green-700;
+            }
+            .collapse__closed{
+                &::after{
+                    content: url(../images/collapse-closed.svg);
+                }
+            }
+            .collapse__open{
+                &::after{
+                    content: url(../images/collapse-open.svg);
+                }
+            }
+        } 
+    }
+}
+
+// Prodcut content
+.product{
+    .product__content{
+        padding: 0 30px 30px 30px; 
+        border-top: solid 1px $Gray-100;
+    }   
+    .product__desciption,
+    .product__differentials,
+    .product__composition,
+    .product__usage,
+    .product__application,
+    .product__size__available{
+        h3{
+            color :$Green-700;
+            margin-top: 40px;
+        }
+    }
+    .product__size__available{
+        img{
+            margin-top: 10px;
+        }
+    }
+    .product__differentials{
+        li{
+            margin-bottom: 15px;
+            &::before{
+                content: '•';
+                font-size: 2.5rem;
+                color: $Green-600;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+
+// Exclusive yellow label
+.products__list{
+    .product{
+        .exclusive__label{
+            position: absolute;
+            top: -23px;
+            left: -22px;
+        }
+    }
+}
+
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+    .products__general{
+        .products__list{
+            header{
+                p{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .products__general{
+        display: flex;
+        margin-top: -115px;
+        justify-content: space-between;
+        flex-direction: column;
+        .products__list{
+            max-width: 100%;
+            margin-left: 0;
+            margin-bottom: 50px;
+            > header{
+                margin: 25px auto 50px auto;
+                h2{
+                    text-align: center;
+                }
+            }
+        }
+        .product__selected{
+            .back-to-products{
+                display: none;
+            }
+        }
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+
+}

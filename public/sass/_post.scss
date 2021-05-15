@@ -1,0 +1,125 @@
+.post__hero{
+    width: 100%;
+    margin-top: -115px;
+    border-bottom: solid 8px $Green-600;
+    position: relative;
+    .post__hero__container{
+        height: 500px;
+        width: 100%;
+        position: relative;
+        a{
+            pointer-events: none;
+            .post__cover{
+                .fade-gradient{
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.post__content{
+    margin-bottom: 80px;
+    h1,
+    h2,
+    .post__content__gallery,
+    .post__content__video,
+    .post__content__image{
+        margin-top: 40px;
+    }
+    h1,
+    h2{
+        color: $Green-700;
+    }
+    p{
+        margin-top: 20px;
+        color: $Gray-600;
+    }
+    .post__content__gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-auto-rows: minmax(100px, 170px);
+        .post__content__gallery__thumb{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .post__content__image{
+        width: 100%;
+        img{
+            width: inherit;
+        }
+    }
+    .back__to__blog{
+        color: $Accent-Green;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top: solid 1px $Gray-200;
+        width: 100%;
+        &::before{
+            content: url(../images/back-to-blog.svg);
+            @include ease-in;
+            opacity: 0;
+        }
+        &:hover{
+            &::before{
+                margin-right: 10px;
+                @include ease-out;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.video-wrapper{
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+    iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ====================================================
+//  Medium Devices, Desktops
+// ====================================================
+
+@media only screen and (max-width: 992px) {
+    .post__hero{
+        .post__hero__container{
+            height: 300px;
+        }
+    } 
+}
+
+// ====================================================
+// Small Devices, Tablets
+// ====================================================
+
+@media only screen and (max-width: 768px) {
+    .post__content{
+        .post__content__gallery{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+// ====================================================
+// Extra Small Devices, Phones
+// ====================================================
+
+@media only screen and (max-width: 480px) {
+
+}
